@@ -1,0 +1,22 @@
+[package]
+name = "PassManagerGUI"
+version = "0.1.0"
+edition = "2021"
+
+# Настройка имени бинарника (можно изменить "PasswordGenerator" на нужное имя)
+[[bin]]
+name = "PasswordGenerator"
+path = "src/main.rs"
+
+[dependencies]
+eframe = { version = "0.33.2", default-features = false, features = ["default_fonts", "glow"] }
+egui = { version = "0.33.2", default-features = false }
+rand = "0.9.2"
+arboard = "3.6"
+
+# Оптимизация размера release бинарника
+[profile.release]
+opt-level = "z"      # Оптимизация по размеру
+lto = true           # Link-time optimization
+codegen-units = 1    # Лучшая оптимизация за счет времени компиляции
+strip = true         # Удаление отладочных символов
