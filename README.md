@@ -1,4 +1,4 @@
-# PassManager
+# PassGenerator
 
 A simple password generator for Windows, built with Rust and egui.
 
